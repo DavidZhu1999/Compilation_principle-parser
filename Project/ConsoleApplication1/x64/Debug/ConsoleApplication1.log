@@ -1,0 +1,9 @@
+﻿  ConsoleApplication1.c
+c:\users\thinkpad\desktop\新建文件夹\consoleapplication1\consoleapplication1.c(39): warning C4553: “==”: 未使用表达式结果；是否打算使用“=”?
+c:\users\thinkpad\desktop\新建文件夹\consoleapplication1\consoleapplication1.c(79): warning C4553: “==”: 未使用表达式结果；是否打算使用“=”?
+c:\users\thinkpad\desktop\新建文件夹\consoleapplication1\consoleapplication1.c(225): warning C4133: “函数”: 从“FILE *”到“const char *”的类型不兼容
+c:\users\thinkpad\desktop\新建文件夹\consoleapplication1\consoleapplication1.c(224): warning C4101: “count”: 未引用的局部变量
+c:\users\thinkpad\desktop\新建文件夹\consoleapplication1\consoleapplication1.c(223): warning C4101: “n”: 未引用的局部变量
+c:\users\thinkpad\desktop\新建文件夹\consoleapplication1\consoleapplication1.c(608): warning C4133: “函数”: 从“char [20]”到“FILE *”的类型不兼容
+c:\users\thinkpad\desktop\新建文件夹\consoleapplication1\consoleapplication1.c(602): warning C4101: “output”: 未引用的局部变量
+  ConsoleApplication1.vcxproj -> C:\Users\ThinkPad\Desktop\新建文件夹\x64\Debug\ConsoleApplication1.exe

@@ -1,0 +1,14 @@
+Keyword: num
+ID: fact
+Sperator: LPAR
+ID: int
+ID: x
+Sperator: RPAR
+Sperator: BEGFUNC
+ENTER
+Note: /* recursive factorial functions */
+ENTER
+Keyword: if
+Sperator: LPAR
+ID: x
+Error!!!

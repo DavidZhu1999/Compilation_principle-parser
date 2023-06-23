@@ -1,0 +1,11 @@
+﻿  scanner.c
+C:\Users\57050\Desktop\新建文件夹\update new 2019.11.17\ConsoleApplication1\scanner.c(18,26): warning C4013: “create_list”未定义；假设外部返回 int
+C:\Users\57050\Desktop\新建文件夹\update new 2019.11.17\ConsoleApplication1\scanner.c(25,9): warning C4013: “Scanner”未定义；假设外部返回 int
+C:\Users\57050\Desktop\新建文件夹\update new 2019.11.17\ConsoleApplication1\scanner.c(28,16): warning C4013: “out_front_list”未定义；假设外部返回 int
+C:\Users\57050\Desktop\新建文件夹\update new 2019.11.17\ConsoleApplication1\scanner.c(18,1): warning C4047: “初始化”:“Node *”与“int”的间接级别不同
+  list.c
+C:\Users\57050\Desktop\新建文件夹\update new 2019.11.17\ConsoleApplication1\scanner.c(19,8): warning C4101: “output”: 未引用的局部变量
+C:\Users\57050\Desktop\新建文件夹\update new 2019.11.17\ConsoleApplication1\list.c(29,32): warning C4553: “==”: 未使用表达式结果；是否打算使用“=”?
+  正在生成代码...
+C:\Users\57050\Desktop\新建文件夹\update new 2019.11.17\ConsoleApplication1\list.c(74,29): warning C4553: “==”: 未使用表达式结果；是否打算使用“=”?
+  ConsoleApplication1.vcxproj -> C:\Users\57050\Desktop\新建文件夹\update new 2019.11.17\Debug\ConsoleApplication1.exe

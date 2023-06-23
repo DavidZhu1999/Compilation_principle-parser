@@ -51,7 +51,3 @@ mulop -> * | /
 id-stmt ->  ID (args) 
 args -> arg-list | empty
 arg-list -> expression | empty
-
-
-
-

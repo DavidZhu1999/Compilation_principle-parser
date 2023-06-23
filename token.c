@@ -2,13 +2,13 @@
 #include<string.h>
 #include<stdlib.h>
 #include<ctype.h>
-#include "list.h"
+#include "globals.h"
 /*
 Scanner function
 */
-void Scanner(FILE* filename, Node* head) {
+void Scanner(char* filename, Node* head) {
 
-	FILE* inputFile = filename;
+	FILE* inputFile;
 	int count = 1;
 	inputFile = fopen(filename, "r");
 	if (inputFile == NULL) {
@@ -39,6 +39,16 @@ void Scanner(FILE* filename, Node* head) {
 			newNode->token.type = 8;
 			newNode->token.string[newNode->size] = '\0';
 			count = count + 1;
+			if (Gets == EOF) {
+				newNode->token.string[newNode->size] = '\0';
+				newNode->token.type = 3;
+				end_insert_list(head, newNode->token.string, newNode->token.type);
+				Node* eofnode = create_node();
+				ClearNode(eofnode);
+				eofnode->token.type = 10;
+				end_insert_list(head, eofnode->token.string, eofnode->token.type);
+				break;
+			}
 		}
 
 		/*
@@ -61,8 +71,31 @@ void Scanner(FILE* filename, Node* head) {
 				goto F2;
 			}
 			else if (Gets == EOF) {
-				newNode->token.string[newNode->size] = '\0';
+				newNode->token.string[newNode->size] = '\0'; 
 				newNode->token.type = 2;
+				if (strcmp(newNode->token.string, "while") == 0) {
+					newNode->token.type = 1;
+				}
+				if (strcmp(newNode->token.string, "else") == 0) {
+					newNode->token.type = 1;
+				}
+				if (strcmp(newNode->token.string, "if") == 0) {
+					newNode->token.type = 1;
+				}
+				if (strcmp(newNode->token.string, "return") == 0) {
+					newNode->token.type = 1;
+				}
+				if (strcmp(newNode->token.string, "num") == 0) {
+					newNode->token.type = 1;
+				}
+				if (strcmp(newNode->token.string, "void") == 0) {
+					newNode->token.type = 1;
+				}				
+				end_insert_list(head, newNode->token.string, newNode->token.type);
+				Node* eofnode = create_node();
+				ClearNode(eofnode);
+				eofnode->token.type = 10;
+				end_insert_list(head, eofnode->token.string, eofnode->token.type);
 				break;
 			}
 			else {
@@ -90,6 +123,9 @@ void Scanner(FILE* filename, Node* head) {
 			if (strcmp(newNode->token.string, "num") == 0) {
 				newNode->token.type = 1;
 			}
+			if (strcmp(newNode->token.string, "void") == 0) {
+				newNode->token.type = 1;
+			}
 
 		}
 
@@ -114,6 +150,11 @@ void Scanner(FILE* filename, Node* head) {
 			else if (Gets == EOF) {
 				newNode->token.string[newNode->size] = '\0';
 				newNode->token.type = 3;
+				end_insert_list(head, newNode->token.string, newNode->token.type);
+				Node* eofnode = create_node();
+				ClearNode(eofnode);
+				eofnode->token.type = 10;
+				end_insert_list(head, eofnode->token.string, eofnode->token.type);
 				break;
 			}
 			else {
@@ -146,6 +187,12 @@ void Scanner(FILE* filename, Node* head) {
 			}
 			else if (Gets == EOF) {
 				newNode->token.string[newNode->size] = '\0';
+				newNode->token.type = 5;
+				end_insert_list(head, newNode->token.string, newNode->token.type);
+				Node* eofnode = create_node();
+				ClearNode(eofnode);
+				eofnode->token.type = 10;
+				end_insert_list(head, eofnode->token.string, eofnode->token.type);
 				break;
 			}
 			else {
@@ -165,7 +212,13 @@ void Scanner(FILE* filename, Node* head) {
 			Gets = fgetc(inputFile);
 			if (Gets == EOF) {
 				newNode->token.string[newNode->size] = '\0';
+				end_insert_list(head, newNode->token.string, newNode->token.type);
+				Node* eofnode = create_node();
+				ClearNode(eofnode);
+				eofnode->token.type = 10;
+				end_insert_list(head, eofnode->token.string, eofnode->token.type);
 				break;
+
 			}
 			else {
 				fseek(inputFile, -1, SEEK_CUR);
@@ -189,7 +242,13 @@ void Scanner(FILE* filename, Node* head) {
 			}
 			else if (Gets == EOF) {
 				newNode->token.string[newNode->size] = '\0';
+				end_insert_list(head, newNode->token.string, newNode->token.type);
+				Node* eofnode = create_node();
+				ClearNode(eofnode);
+				eofnode->token.type = 10;
+				end_insert_list(head, eofnode->token.string, eofnode->token.type);
 				break;
+
 			}
 			else {
 				fseek(inputFile, -1, SEEK_CUR);
@@ -212,6 +271,11 @@ void Scanner(FILE* filename, Node* head) {
 			}
 			else if (Gets == EOF) {
 				newNode->token.string[newNode->size] = '\0';
+				end_insert_list(head, newNode->token.string, newNode->token.type);
+				Node* eofnode = create_node();
+				ClearNode(eofnode);
+				eofnode->token.type = 10;
+				end_insert_list(head, eofnode->token.string, eofnode->token.type);
 				break;
 			}
 			else {
@@ -230,6 +294,11 @@ void Scanner(FILE* filename, Node* head) {
 			}
 			else if (Gets == EOF) {
 				newNode->token.string[newNode->size] = '\0';
+				end_insert_list(head, newNode->token.string, newNode->token.type);
+				Node* eofnode = create_node();
+				ClearNode(eofnode);
+				eofnode->token.type = 10;
+				end_insert_list(head, eofnode->token.string, eofnode->token.type);
 				break;
 			}
 			else {
@@ -252,6 +321,11 @@ void Scanner(FILE* filename, Node* head) {
 			}
 			else if (Gets == EOF) {
 				newNode->token.string[newNode->size] = '\0';
+				end_insert_list(head, newNode->token.string, newNode->token.type);
+				Node* eofnode = create_node();
+				ClearNode(eofnode);
+				eofnode->token.type = 10;
+				end_insert_list(head, eofnode->token.string, eofnode->token.type);
 				break;
 			}
 			else {
@@ -278,10 +352,6 @@ void Scanner(FILE* filename, Node* head) {
 				newNode->token.string[newNode->size] = Gets;
 				newNode->size = newNode->size + 1;
 				newNode->token.string[newNode->size] = '\0';
-			}
-			else if (Gets == EOF) {
-				newNode->token.string[newNode->size] = '\0';
-				break;
 			}
 			else {
 				fseek(inputFile, -1, SEEK_CUR);
@@ -311,6 +381,11 @@ void Scanner(FILE* filename, Node* head) {
 				}
 				else if (Gets == EOF) {
 					newNode->token.string[newNode->size] = '\0';
+					end_insert_list(head, newNode->token.string, newNode->token.type);
+					Node* eofnode = create_node();
+					ClearNode(eofnode);
+					eofnode->token.type = 10;
+					end_insert_list(head, eofnode->token.string, eofnode->token.type);
 					break;
 				}
 				else {
@@ -351,6 +426,11 @@ void Scanner(FILE* filename, Node* head) {
 				}
 				else if (Gets == EOF) {
 					newNode->token.string[newNode->size] = '\0';
+					end_insert_list(head, newNode->token.string, newNode->token.type);
+					Node* eofnode = create_node();
+					ClearNode(eofnode);
+					eofnode->token.type = 10;
+					end_insert_list(head, eofnode->token.string, eofnode->token.type);
 					break;
 				}
 				else {
@@ -404,8 +484,14 @@ void Scanner(FILE* filename, Node* head) {
 
 			}
 			else if (Gets == EOF) {
-				fseek(inputFile, -1, SEEK_CUR);
+				
 				newNode->token.string[newNode->size] = '\0';
+				end_insert_list(head, newNode->token.string, newNode->token.type);
+				Node* eofnode = create_node();
+				ClearNode(eofnode);
+				eofnode->token.type = 10;
+				end_insert_list(head, eofnode->token.string, eofnode->token.type);
+				break;
 			}
 			else
 			{

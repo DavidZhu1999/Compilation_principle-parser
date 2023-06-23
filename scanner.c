@@ -9,25 +9,26 @@ WU xiang	17098533-I011-0061
 #include<string.h>
 #include<stdlib.h>
 #include<ctype.h>
-#include "list.h"
+#include "globals.h"
+
 
 
 int main()
 {
 
 	Node* head = create_list(1);
+	TreeNode *TreeHead;
 	FILE* output;
 	char filename[20];
-
-	printf("what is the file name:\n");
-	gets_s(filename, 20);
-
+	head->length = 0;
+	printf("What is the file name? (Hint: arrayMaxMean.n or fact.n or sum100.n)\n");
+	gets(filename);
 	Scanner(filename, head);
-
-	printf("Successful! Please see the file output.txt.");
+	Data_Deal(head);
 	out_front_list(head);
+	printf("\n\n\nNow printing parse tree of the parser:\n\n");
+	TreeHead = Parse(head->NextNode);
+	print_tree(TreeHead);
 	return 0;
 
 }
-
-
